@@ -6,7 +6,8 @@ function encode(p,q)
     for i in eachindex(p)
         x = tr(k)%b
         c[i] = (p[i]+x)%b
-        if isodd(x)
+        y = (x + p[i])%b
+        if isodd(y)
             spincols(k)
         else
             spinrows(k)
@@ -23,7 +24,8 @@ function decode(p,q)
     for i in eachindex(p)
         x = tr(k)%b
         c[i] = (p[i]- x + b )%b
-        if isodd(x)
+        y = (x + c[i])%b
+        if isodd(y)
             spincols(k)
         else
             spinrows(k)
