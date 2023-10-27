@@ -2,6 +2,7 @@
 
 function demo()
     k = key(n)
+    printkey(k)
     p = text(t)
     c  = encrypt(p,k,r)
     d  = decrypt(c,k,r)

@@ -1,11 +1,11 @@
 
 function encode(p,q)
     k = copy(q)
-    printkey(k)
+    #printkey(k)
     c = zeros(Int64,length(p))
     for i in eachindex(p)
         x = tr(k)%b
-        c[i] = (p[i]+x)%b
+        c[i] = (p[i]+ x)%b
         y = (x + p[i])%b
         if isodd(y)
             spincols(k)
