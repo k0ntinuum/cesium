@@ -14,14 +14,22 @@ function spincols(k)
     end 
 end
 
+function spinrows(k,p)
+    for j in 1:size(k)[begin]
+            k[j,:] = circshift(k[j,:],k[j,j]+p+1)
+    end
+end
+
+function spincols(k,p)
+    for j in 1:size(k)[begin]
+        k[:,j] = circshift(k[:,j],k[j,j]+p+1)
+    end 
+end
+
 function spin(q,n)
     k = copy(q)
     for i in 1:n
-        if isodd(i)
-            spincols(k)
-        else
-            spinrows(k)
-        end
+        isodd(tr(k)+ i) ? spincols(k) : spinrows(k)
     end
     k
 end
