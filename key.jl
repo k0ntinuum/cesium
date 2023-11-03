@@ -4,13 +4,13 @@ function text(n)  rand(0:b-1, n) end
 
 function spinrows(k)
     for j in 1:size(k)[begin]
-            k[j,:] = circshift(k[j,:],k[j,j]+1)
+            k[j,:] = circshift(k[j,:],k[j,j])
     end
 end
 
 function spincols(k)
     for j in 1:size(k)[begin]
-        k[:,j] = circshift(k[:,j],k[j,j]+1)
+        k[:,j] = circshift(k[:,j],k[j,j])
     end 
 end
 

@@ -1,9 +1,9 @@
 
-# t = 100
+t = 100
 # r = 100
 #alph = "O|@*&=#%~?"
 #alph = "O|23456789"
-alph = "O|23456789"
+alph = "O123456789"
 n  = 2*length(alph)
 b = length(alph)
 r = 100
